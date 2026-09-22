@@ -1,5 +1,5 @@
 import express from 'express'
-import celularRouter from './src/routes/celulares.routes.js'
+import celularRouter from './routes/celulares.routes.js'
 
 const server = express()
 
@@ -11,7 +11,7 @@ server.get('/health', (req, res) => {
     })
 })
 
-server.use(celularRouter)
+server.use('/celulares', celularRouter)
 
 server.listen(3000, () => {
     console.log('Servidor rodando em http://localhost:3000')
